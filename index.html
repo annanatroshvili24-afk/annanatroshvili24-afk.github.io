@@ -151,20 +151,32 @@ footer{padding:26px 0 40px;color:var(--ink-3);font-size:14px;display:flex;flex-w
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 <style id="theme-teal-gold">
-/* Бирюзово-золотая тема витрины. Подключается скриптом apply-theme.mjs после каждой сборки. */
+/* Тёмная бирюзово-золотая тема витрины. Подключается скриптом apply-theme.mjs после каждой сборки. */
 :root{
-  --accent:#0E7C86; --ink:#0B2A2E; --soft:#F6F1E2;
-  --line:#E4DEC9; --ink-2:#4A5C5E; --ink-3:#7F8B8C;
-  --gold:#C9A23F; --gold-deep:#8A6A12;
+  color-scheme:dark;
+  --paper:#0A1F22; --ink:#F4EFDD; --ink-2:#B8C7C4; --ink-3:#8DA09E;
+  --soft:#12343A; --line:#21494F;
+  --accent:#0B7F8A;
+  --gold:#E2B84D; --gold-deep:#E2B84D;
+  --night:#06171A; --card-ink:#0B2A2E;
 }
-.eyebrow{color:var(--gold-deep)}
-h1 em{color:var(--gold-deep)}
-.brand i,.hello b{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--gold)}
-.btn-main{box-shadow:0 12px 26px -14px var(--accent)}
-.top .btn-main{background:var(--gold);color:var(--ink);box-shadow:0 12px 26px -14px var(--gold)}
-.phone{background:#0B2A2E}
-.phone .notch{background:#0B2A2E}
+.top{background:rgba(10,31,34,.88)}
 .top.scrolled{border-color:var(--gold)}
+.eyebrow{color:var(--gold)}
+h1 em{color:var(--gold)}
+.brand i,.hello b{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--gold)}
+.top .btn-main{background:var(--gold);color:var(--card-ink);box-shadow:0 12px 26px -14px var(--gold)}
+.btn-ghost:hover{background:var(--line)}
+.phone{background:var(--night);box-shadow:0 40px 60px -30px rgba(0,0,0,.7),inset 0 0 0 2px #2A5A61}
+.phone .notch{background:var(--night)}
+.browser{box-shadow:0 30px 50px -30px rgba(0,0,0,.7),0 0 0 1px var(--line)}
+.final{background:var(--night);box-shadow:inset 0 0 0 1px var(--line)}
+.chat{--ink:var(--card-ink);--ink-2:#4A5C5E;--ink-3:#7F8B8C;--soft:#F6F1E2;--line:#E4DEC9;color:var(--card-ink)}
+.toast{background:var(--gold);color:var(--card-ink)}
+a:focus-visible{outline-color:var(--gold)}
+body{background:var(--paper)}
+main a,.muted a{color:var(--gold)}
+.case-text .open,.price .sum{color:#4FD1DC}
 </style>
 </head>
 <body>
