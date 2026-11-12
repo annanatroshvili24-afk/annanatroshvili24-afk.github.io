@@ -150,6 +150,34 @@ footer{padding:26px 0 40px;color:var(--ink-3);font-size:14px;display:flex;flex-w
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
+<style id="theme-teal-gold">
+/* Тёмная бирюзово-золотая тема витрины. Подключается скриптом apply-theme.mjs после каждой сборки. */
+:root{
+  color-scheme:dark;
+  --paper:#0A1430; --ink:#F4EFDD; --ink-2:#B9C2DC; --ink-3:#8D99BA;
+  --soft:#15244F; --line:#27396E;
+  --accent:#0B7F8A;
+  --gold:#E2B84D; --gold-deep:#E2B84D;
+  --night:#060D22; --card-ink:#0D1A3C;
+}
+.top{background:rgba(10,20,48,.88)}
+.top.scrolled{border-color:var(--gold)}
+.eyebrow{color:var(--gold)}
+h1 em{color:var(--gold)}
+.brand i,.hello b{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--gold)}
+.top .btn-main{background:var(--gold);color:var(--card-ink);box-shadow:0 12px 26px -14px var(--gold)}
+.btn-ghost:hover{background:var(--line)}
+.phone{background:var(--night);box-shadow:0 40px 60px -30px rgba(0,0,0,.7),inset 0 0 0 2px #34498A}
+.phone .notch{background:var(--night)}
+.browser{box-shadow:0 30px 50px -30px rgba(0,0,0,.7),0 0 0 1px var(--line)}
+.final{background:var(--night);box-shadow:inset 0 0 0 1px var(--line)}
+.chat{--ink:var(--card-ink);--ink-2:#4A5575;--ink-3:#7F88A3;--soft:#F1EEE4;--line:#DEDACB;color:var(--card-ink)}
+.toast{background:var(--gold);color:var(--card-ink)}
+a:focus-visible{outline-color:var(--gold)}
+body{background:var(--paper)}
+main a,.muted a{color:var(--gold)}
+.case-text .open,.price .sum{color:#4FD1DC}
+</style>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -170,7 +198,7 @@ footer{padding:26px 0 40px;color:var(--ink-3);font-size:14px;display:flex;flex-w
   </section>
 
   <section class="block" id="works">
-    <div class="block-head reveal"><div><div class="eyebrow">Работы</div><h2>Сайты, которые я сделал</h2></div><p id="worksNote"></p></div>
+    <div class="block-head reveal"><div><div class="eyebrow">Работы</div><h2>Сайты, которые я сделала</h2></div><p id="worksNote"></p></div>
     <div id="cases"></div>
   </section>
 
@@ -264,7 +292,7 @@ footer{padding:26px 0 40px;color:var(--ink-3);font-size:14px;display:flex;flex-w
   if (withShots.length) fan.innerHTML = withShots.slice(0, 3).map((c, i) => phone(c, 20 + i * 4)).join('');
   else { fan.classList.add('empty'); fan.textContent = 'Здесь появятся ваши работы: скажите Клоду «добавь в витрину сайт …»'; }
 
-  const story = (c) => [['Задача', c.task], ['Что сделал', c.did], ['Результат', c.result]].filter(([, v]) => v).map(([k, v]) => `<li><b>${k}</b><span>${esc(v)}</span></li>`).join('');
+  const story = (c) => [['Задача', c.task], ['Что сделала', c.did], ['Результат', c.result]].filter(([, v]) => v).map(([k, v]) => `<li><b>${k}</b><span>${esc(v)}</span></li>`).join('');
   $('cases').innerHTML = cases.map((c, i) => `
     <article class="case reveal">
       <div class="devices${c.desktop ? '' : ' solo'}">
